@@ -12,6 +12,8 @@ const theme = createTheme({
   },
 });
 
+const apiKey = import.meta.env.VITE_APP_PASSWORD;
+
 function App() {
 
   const [password, setPassword] = useState<string>('');
@@ -21,7 +23,7 @@ function App() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    if(formData.get('password') == 'text') {
+    if(formData.get('password') == apiKey) {
       setSuccessfulPassword(true);
     }
   }
