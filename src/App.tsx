@@ -1,10 +1,7 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {TextField, Box, Grid} from '@mui/material';
+import {TextField} from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 
 const theme = createTheme({
@@ -16,7 +13,6 @@ const theme = createTheme({
 });
 
 function App() {
-  const [count, setCount] = useState(0)
 
   const [password, setPassword] = useState<string>('');
   const [successfulPassword, setSuccessfulPassword] = useState<boolean>(false);
