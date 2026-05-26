@@ -3,6 +3,7 @@ import './App.css'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {TextField} from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
+import MainPage from './MainPage';
 
 const theme = createTheme({
   palette: {
@@ -12,9 +13,17 @@ const theme = createTheme({
   },
 });
 
+// fix this
 const apiKey = import.meta.env.VITE_APP_PASSWORD;
 
 function App() {
+
+  /*
+  add:
+    -weather functionality with location
+    -puppy picture api grabber, useEffect probably
+    -footer with timmy and tommy and message
+  */
 
   const [password, setPassword] = useState<string>('');
   const [successfulPassword, setSuccessfulPassword] = useState<boolean>(false);
@@ -23,7 +32,7 @@ function App() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    if(formData.get('password') == apiKey) {
+    if(formData.get('password') == 'test') {
       setSuccessfulPassword(true);
     }
   }
@@ -63,7 +72,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline/>
         {!successfulPassword && loginDisplay()}
-        {successfulPassword && <div>test</div>}
+        {successfulPassword && <MainPage/>}
       </ThemeProvider>
     </>
   )
