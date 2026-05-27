@@ -42,7 +42,7 @@ function App() {
           alignItems: 'center',
           gap: 10
         }}>
-          <img src="public\beaver.png" width="200px" height="200px" alt="beaver"/>
+          <img src="beaver.png" width="200px" height="200px" alt="beaver"/>
             <label htmlFor="password">Enter the Password!</label>
           <TextField
             id="password"

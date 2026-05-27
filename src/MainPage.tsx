@@ -82,9 +82,9 @@ function MainPage () {
                     flexDirection: 'row',
                     alignItems: 'center'
                 }}>
-                    <img src="public\IMG_3363.png" width="100px" height="100px"/>
+                    <img src="IMG_3363.png" width="100px" height="100px"/>
                     <Typography>Welcome to Fifi's Hangout!!!</Typography>
-                    <img src="public\IMG_3364.png" width="100px" height="100px"/>
+                    <img src="IMG_3364.png" width="100px" height="100px"/>
                 </Box>
             </div>
         );
@@ -109,7 +109,7 @@ function MainPage () {
                 margin: '10px'
             }}>
                 <Typography>Forecast for Today!</Typography>
-                <img src="public\312cb6dc61dc3f9ad42b8218681a896d.png" width="50px" height="50px"/>
+                <img src="312cb6dc61dc3f9ad42b8218681a896d.png" width="50px" height="50px"/>
             </Box>
                 {position.error ? (
                 <Typography>Error</Typography>
@@ -141,7 +141,7 @@ function MainPage () {
             alignItems: 'center',
             marginTop: '30px'
         }}>
-            <img src="public\Timmy_and_Tommy_NH.png" height="25px" width="40px"/>
+            <img src="Timmy_and_Tommy_NH.png" height="25px" width="40px"/>
             <Typography variant="caption" gutterBottom sx={{
                 display: 'block',
                 color: 'grey'
