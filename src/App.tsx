@@ -1,17 +1,10 @@
 import { useState } from 'react'
 import './App.css'
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {TextField} from '@mui/material';
-import CssBaseline from '@mui/material/CssBaseline';
+import {TextField, Button} from '@mui/material';
 import MainPage from './MainPage';
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#1976d2',
-    },
-  },
-});
+import '@fontsource/averia-serif-libre/300.css';
+import '@fontsource/averia-serif-libre/400.css';
+import '@fontsource/averia-serif-libre/700.css';
 
 function App() {
 
@@ -29,7 +22,7 @@ function App() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    if(formData.get('password') == 'test') {
+    if(formData.get('password') == 'copperleocharlie') {
       setSuccessfulPassword(true);
     }
   }
@@ -49,29 +42,27 @@ function App() {
           alignItems: 'center',
           gap: 10
         }}>
-            <label htmlFor="password">Password:</label>
+          <img src="public\beaver.png" width="200px" height="200px" alt="beaver"/>
+            <label htmlFor="password">Enter the Password!</label>
           <TextField
             id="password"
             name="password"
             type="password"
-            label="password"
+            label="Enter Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit">Submit</button>
+          <Button variant="contained" type="submit">Submit!</Button>
         </form>
       </div>
     )
   }
 
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <CssBaseline/>
+    <div style={{backgroundColor: '#b7e0b4'}}>
         {!successfulPassword && loginDisplay()}
         {successfulPassword && <MainPage/>}
-      </ThemeProvider>
-    </>
+    </div>
   )
 }
 

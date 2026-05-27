@@ -1,7 +1,10 @@
 
 import {useState, useEffect} from 'react';
 import axios from 'axios';
-import { Typography, Button } from '@mui/material';
+import { Typography, Button, Box } from '@mui/material';
+import '@fontsource/averia-serif-libre/300.css';
+import '@fontsource/averia-serif-libre/400.css';
+import '@fontsource/averia-serif-libre/700.css';
 
 interface LocationState {
     latitude: number | null;
@@ -70,18 +73,82 @@ function MainPage () {
 
     }, []);
 
+    const makeHeader = () => {
+        return (
+            <div>
+                <Box sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    flexDirection: 'row',
+                    alignItems: 'center'
+                }}>
+                    <img src="public\IMG_3363.png" width="100px" height="100px"/>
+                    <Typography>Welcome to Fifi's Hangout!!!</Typography>
+                    <img src="public\IMG_3364.png" width="100px" height="100px"/>
+                </Box>
+            </div>
+        );
+    }
+
 
  return (
- <div>
-    {position.error ? (
-        <p>Error</p>
-    ) : loaded && (
-        <p>{forecast}</p>
-    )}
-    <Typography>Daily Dog!</Typography>
-    {dogImage && <img src={dogImage} width="300px" height="300px" alt="doggy"/>
-    }
-    <Button onClick={getNewDog}>Get a new one!</Button>
+    <div>
+        {makeHeader()}
+        <Box sx={{
+            border: 2,
+            borderRadius: '16px',
+            borderColor: '#dbb8d8',
+            padding: "10px",
+            margin: '15px'
+        }}>
+            <Box sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                flexDirection: 'row',
+                alignItems: 'center',
+                margin: '10px'
+            }}>
+                <Typography>Forecast for Today!</Typography>
+                <img src="public\312cb6dc61dc3f9ad42b8218681a896d.png" width="50px" height="50px"/>
+            </Box>
+                {position.error ? (
+                <Typography>Error</Typography>
+            ) : loaded && (
+                <Typography>{forecast}</Typography>
+            )}
+        </Box>
+        <Box sx={{
+            border: 2,
+            borderRadius: '16px',
+            borderColor: '#dbb8d8',
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            alignItems: 'center',
+            margin: '15px',
+            padding: '10px',
+            gap: '10px'
+        }}>
+            <Typography>Daily Dog!</Typography>
+            {dogImage && <img src={dogImage} width="70%" height="70%" alt="doggy"/>
+            }
+            <Button variant="outlined" onClick={getNewDog}>Get a new one!</Button>
+        </Box>
+        <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: '30px'
+        }}>
+            <img src="public\Timmy_and_Tommy_NH.png" height="25px" width="40px"/>
+            <Typography variant="caption" gutterBottom sx={{
+                display: 'block',
+                color: 'grey'
+                }}>
+                    Have a great day! I love you baby!
+            </Typography>
+        </Box>
     </div>
 );
 }
